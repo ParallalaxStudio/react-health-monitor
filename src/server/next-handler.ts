@@ -72,7 +72,8 @@ export function inspectSslCertificate(targetUrl: string, timeoutMs: number = 500
         const isExpired = daysRemaining <= 0;
         const isExpiringSoon = daysRemaining <= 15;
 
-        const issuer = cert.issuer ? (cert.issuer.O || cert.issuer.CN || 'Autorité SSL') : 'Let\'s Encrypt';
+        const rawIssuer = cert.issuer ? (cert.issuer.O || cert.issuer.CN || 'Autorité SSL') : "Let's Encrypt";
+        const issuer = Array.isArray(rawIssuer) ? rawIssuer.join(', ') : (rawIssuer || 'Autorité SSL');
 
         resolve({
           domain: host,

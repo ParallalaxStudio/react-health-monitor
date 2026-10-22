@@ -3,16 +3,35 @@
   "version": "1.0.0",
   "description": "Composant React & Next.js universel et autonome pour la surveillance des certificats SSL/HTTPS et le diagnostic de performance et latence d'API.",
   "main": "dist/index.js",
-  "module": "dist/index.mjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./server": {
+      "types": "./dist/server/next-handler.d.ts",
+      "import": "./dist/server/next-handler.js",
+      "default": "./dist/server/next-handler.js"
+    }
+  },
   "files": [
     "dist",
-    "src",
     "README.md"
   ],
   "scripts": {
     "build": "tsc",
+    "prepublishOnly": "npm run build",
     "dev": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ParallalaxStudio/react-health-monitor.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [
     "react",
