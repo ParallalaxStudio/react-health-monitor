@@ -1,0 +1,39 @@
+{
+  "name": "@parallalaxstudio/react-health-monitor",
+  "version": "1.0.0",
+  "description": "Composant React & Next.js universel et autonome pour la surveillance des certificats SSL/HTTPS et le diagnostic de performance et latence d'API.",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "keywords": [
+    "react",
+    "nextjs",
+    "health-check",
+    "ssl-monitor",
+    "api-latency",
+    "performance",
+    "dashboard",
+    "admin"
+  ],
+  "author": "ParallalaxStudio",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.0 || ^19.0.0",
+    "@types/react-dom": "^18.3.0 || ^19.0.0",
+    "typescript": "^5.0.0"
+  }
+}
